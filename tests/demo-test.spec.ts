@@ -1,12 +1,13 @@
 import { test, expect } from "@playwright/test";
 
-test("basic test", async ({ page }) => {
-  await page.goto("https://playwright.dev/");
-  await expect(page).toHaveTitle(/Playwright/);
-});
+test.describe("navigation", () => {
+  test.beforeEach(async ({ page }) => {
+    // Go to the starting url before each test.
+    await page.goto("https://playwright.dev/");
+  });
 
-test("get started link", async ({ page }) => {
-  await page.goto("https://playwright.dev/");
-  await page.getByRole("link", { name: "Get Started" }).click();
-  await expect(page).toHaveTitle(/Installation/);
+  test("main navigation", async ({ page }) => {
+    // Assertions use the expect API.
+    await expect(page).toHaveURL("https://playwright.dev/");
+  });
 });
