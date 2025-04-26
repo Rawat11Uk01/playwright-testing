@@ -1,6 +1,6 @@
 import { test, chromium, expect } from "@playwright/test";
 
-test("client flow test", async ({ page }) => {
+test.skip("client flow test", async ({ page }) => {
   const url = "http://localhost:3000/auth/login";
   const username = "admin@globalmart.com";
   const password = "root_user";
