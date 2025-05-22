@@ -1,8 +1,8 @@
 import { test, chromium, expect } from "@playwright/test";
-test("Whole Flow", async ({ page }) => {
+test.only("Whole Flow", async ({ page }) => {
   const url = "http://localhost:3000/auth/login";
-  const username = "";
-  const password = "";
+  const username = "kashish@mentorskool.com";
+  const password = "root_user";
 
   // const browser = await chromium.launch();
   // const context = await browser.newContext({
